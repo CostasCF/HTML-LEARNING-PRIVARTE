@@ -50,10 +50,10 @@
 		}
 		hr { background-color:red; height: 1px; border: 0; }
 
-		<title>	
+	</style>
+	<title>	
 			ΕΡΓΑΣΙΑ ΠΡΩΤΗ
 		</title>
-	</style>
 	</head>
 	<!-- διαφορα σχολια εδω περα  <!-->
 	<body>

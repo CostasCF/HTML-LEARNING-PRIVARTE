@@ -1,3 +1,3 @@
-# HTML-LEARNING-PRIVARTE
+# HTML-LEARNING-PRIVARE
 Εργασίες 1ου εξαμήνου 
 Μαθημα : Δουληγέρης - Τεχνολογιες Διαδυκτίου 

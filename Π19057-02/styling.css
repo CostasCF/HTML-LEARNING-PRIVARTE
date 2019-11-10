@@ -1,0 +1,24 @@
+/*----------------------------------------------Header-------------------------------------*/
+.row1, .row1   a{color:#C0BAB6; background-color:#333333;}
+#header nav{display:block; width:100%; margin:10px; padding:10px; }
+#header nav li{display:inline; margin-right:100px; }
+#header nav li a:hover{color:#FF9900; background-color:#333333;}
+#header {display:block; width:auto; margin:auto;}
+
+
+/*----------------------------------------------Paragraphs-------------------------------------*/
+
+.firstP , .secondP , .thirdP , .fourthP { font-size: 20px; text-align: left; background-color:#f2f2e9;}
+/*----------------------------------------------GENERALISE-------------------------------------*/
+
+@media only screen and (max-width: 769px) {
+	 background:url("ball2.jpg");
+  
+}
+
+
+
+
+
+
+

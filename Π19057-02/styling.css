@@ -1,7 +1,7 @@
 /*----------------------------------------------Header-------------------------------------*/
 .row1, .row1   a{color:#C0BAB6; background-color:#333333;}
 #header nav{display:block; width:100%; margin:10px; padding:10px; }
-#header nav li{display:inline; margin-right:100px; }
+#header nav li{display:inline; margin-right:50px; }
 #header nav li a:hover{color:#FF9900; background-color:#333333;}
 #header {display:block; width:auto; margin:auto;}
 
@@ -20,7 +20,8 @@
 
 .contact-form { color: white; font-size: 25px; text-align: center; }
 
- .ParagraphALL { border-right: 5px solid ;
+ .ParagraphALL {
+ border-right: 5px solid ;
 				border-left: 5px solid ;
 				border-color: #333333;
 				border-width: 80%;
@@ -45,6 +46,4 @@ background-color:#c9c9c9; height:2px; border:0; width: 99% }
 	.ParagraphALL {color: white; background-color:gray;} 
 }
 
-
-} 
 

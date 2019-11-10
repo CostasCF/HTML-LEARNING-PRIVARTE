@@ -24,33 +24,27 @@
 				border-left: 5px solid ;
 				border-color: #333333;
 				border-width: 80%;
-				position: relative;}
+				position: relative;
+				font-family: sans-serif;}
 hr {
 background-color:#c9c9c9; height:2px; border:0; width: 99% }
 
-/*----------------------------------------------ΑΛΛΑΓΗ ΕΙΚΟΝΑΣ ΜΟΤΙΒΟ ΑΝΑΛΟΓΑ ΜΕ ΤΟ ΜΕΓΕΘΟΣ ΤΗΣ ΟΘΟΝΗΣ-------------------------------------*/
+/*----------------------------------------------ΑΛΛΑΓΗ ΕΙΚΟΝΑΣ ΑΝΑΛΟΓΑ ΜΕ ΤΟ ΜΕΓΕΘΟΣ ΤΗΣ ΟΘΟΝΗΣ-------------------------------------*/
 
 
-#main-img {
-  
-  height: 190px;
-  width:100%
-} 
+@media screen and (min-width: 768px) {
+	img#ball1 {
+		display: none;	
+	}
+}
 
 @media screen and (max-width: 767px) {   
-    #main-img{
-    	background-image: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
+    img#ball2{
+    	display: none;
     } 
 	.ParagraphALL {color: white; background-color:gray;} 
 }
 
-@media screen and (min-width: 768px) {      
-    #main-img{      
-    	background-image: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
-    } 
+
 } 
-@media (min-width: 769px) {      
-      #main-img{        
-          background-image: url(http://subtlepatterns.com/patterns/paisley.png);
-      } 
-}
+

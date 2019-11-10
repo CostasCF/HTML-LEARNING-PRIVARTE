@@ -6,19 +6,45 @@
 #header {display:block; width:auto; margin:auto;}
 
 
-/*----------------------------------------------Paragraphs-------------------------------------*/
+/*----------------------------------------------ΠΑΡΑΓΡΑΦΟΙ-------------------------------------*/
 
-.firstP , .secondP , .thirdP , .fourthP { font-size: 20px; text-align: left; }
-/*----------------------------------------------GENERALISE-------------------------------------*/
+.firstP , .secondP , .thirdP , .fourthP , .fifthP { font-size: 20px; text-align: left; }
+/*----------------------------------------------ΓΕΝΙΚΑ-------------------------------------*/
 
-@media only screen and (max-width: 769px) {
-	 background:url("ball2.jpg");
-  
+
+
+body {background-color:white;}
+
+.footer {
+	background: :#333333;
+	color: white;
+	height: 250px;
 }
-body {background-color:#e6e8ed;}
 
 
+/*----------------------------------------------ΑΛΛΑΓΗ ΕΙΚΟΝΑΣ ΜΟΤΙΒΟ ΑΝΑΛΟΓΑ ΜΕ ΤΟ ΜΕΓΕΘΟΣ ΤΗΣ ΟΘΟΝΗΣ-------------------------------------*/
 
 
+#main-img {
+  
+  height: 190px;
+  width:100%
+} 
 
+@media screen and (max-width: 767px) {   
+    #main-img{
+    	background-image: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
+    } 
+	h1 {color:white;}
+}
 
+@media screen and (min-width: 768px) {      
+    #main-img{      
+    	background-image: url(http://subtlepatterns.com/patterns/dark_embroidery.png);
+    } 
+} 
+@media (min-width: 769px) {      
+      #main-img{        
+          background-image: url(http://subtlepatterns.com/patterns/paisley.png);
+      } 
+}

@@ -8,14 +8,14 @@
 
 /*----------------------------------------------Paragraphs-------------------------------------*/
 
-.firstP , .secondP , .thirdP , .fourthP { font-size: 20px; text-align: left; background-color:#f2f2e9;}
+.firstP , .secondP , .thirdP , .fourthP { font-size: 20px; text-align: left; }
 /*----------------------------------------------GENERALISE-------------------------------------*/
 
 @media only screen and (max-width: 769px) {
 	 background:url("ball2.jpg");
   
 }
-
+body {background-color:#e6e8ed;}
 
 
 

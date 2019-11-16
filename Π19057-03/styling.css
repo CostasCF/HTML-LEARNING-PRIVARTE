@@ -1,0 +1,104 @@
+/*----------------------------------------------Header-------------------------------------*/
+.row1, .row1   a{color:#C0BAB6; background-color:#333333;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+#header nav{display:block; width:90%; margin:10px; padding:3px; }
+#header nav li{display:inline; margin-right:40px; }
+#header nav li a:hover{color:#FF9900; background-color:#333333;}
+#header {display:block; width:auto; margin:auto;}
+
+
+/*----------------------------------------------ΠΑΡΑΓΡΑΦΟΙ-------------------------------------*/
+
+#ΚΑΝΟΝΕΣ , #ΙΣΤΟΡΙΑ , #ΕΛΛΑΔΑ , #ΚΟΣΜΟΣ ,#ΠΟΔΟΣΦΑΙΡΟ {color:black; text-shadow: 5px 5px 10px gray;  margin-left: 35px; margin-right: 35px;}  
+.firstP , .secondP , .thirdP , .fourthP , .fifthP  { font-size: 20px;  text-align: justify;  margin-left: 35px; margin-right: 35px;}
+h5 {margin-left: 35px; margin-right: 35px;}
+/*----------------------------------------------ΓΕΝΙΚΑ-------------------------------------background-color: #f2f2f2;*/
+
+.footer {
+	background-color :#333333;
+	height: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);}
+.footerTag {text-align: center;
+			color: gray;
+			margin-top: 5px;
+			}
+
+.iframeV { video-align: center;}
+
+.contact-form { color: white; font-size: 25px; text-align: center; }
+
+.SecondPageBorders , .ThirdPageBorders {border-right: 2px solid ;
+				border-left: 2px solid ;
+				border-color: #333333;
+				border-width: 80%;
+				position: relative;
+				font-family: sans-serif;} 
+ .ParagraphALL {
+				
+				border-right: 2px solid ;
+				border-left: 2px solid ;
+				border-color: #333333;
+				border-width: 80%;
+				position: relative;
+				font-family: sans-serif;}
+hr {background-color:#c9c9c9; height:2px; border:0; width: 97.5% }
+
+/*----------------------------------------------ΑΛΛΑΓΗ ΕΙΚΟΝΑΣ ΑΝΑΛΟΓΑ ΜΕ ΤΟ ΜΕΓΕΘΟΣ ΤΗΣ ΟΘΟΝΗΣ-------------------------------------*/
+
+
+@media screen and (min-width: 768px) {
+	img#ball1 {
+		display: none;	
+	}
+}
+
+@media screen and (max-width: 767px) {   
+    img#ball2{
+    	display: none;
+    } 
+	.ParagraphALL {color: white; background-color:gray; } 
+}
+
+/*------------------------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ------------------------ */
+
+
+.EPIKEFALIDA {}
+.ThirdPageBorders {font-family: Arial, Helvetica, sans-serif;}
+* {box-sizing: border-box;}
+
+input[type=text], select, textarea , input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] ,input[type=reset]  {
+  background-color: #4CAF50;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+input[type=submit], input[type=reset] :hover {
+  background-color: #45a049;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+
+
+
+
+
+
+

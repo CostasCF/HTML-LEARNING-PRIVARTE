@@ -32,31 +32,32 @@
 	<!-- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ -------------------->
 	<div class="ThirdPageBorders">
 	
-	<h1> ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ </h1>
+	<form>
 		<div class="container">
-				<form action="/action_page.php">
-				<label for="fname">First Name</label>
-				<input type="text" id="fname" name="firstname" placeholder="Your name..">
+			<h2 class="EPIKEFALIDA"> ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ </h2>
 
-				<label for="lname">Last Name</label>
-				<input type="text" id="lname" name="lastname" placeholder="Your last name..">
+		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
+				<label for="fname">Ονοματεπώνυμο:</label>
+				<input type="text" id="fname" name="firstname" placeholder="Ονοματεπώνυμο..">
 
-				<label for="country">Country</label>
-				<select id="country" name="country">
-					<option value="australia">Australia</option>
-					<option value="canada">Canada</option>
-					<option value="usa">USA</option>
-				</select>
-
-				<label for="subject">Subject</label>
-		<textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
-
-    <input type="submit" value="Submit">
-		</form>
+				<label for="Telephone">Τηλέφωνο:</label>
+				<input type="text" id="Telephone" name="Telephone" placeholder="Τηλέφωνο..">
+				
+				<label for="E-mail">E-mail:</label>
+				<input type="email" id="email" name="email" placeholder="E-mail..">
+				<label for="subject">Ερώτημα:</label>
+				
+		<textarea id="subject" name="subject" placeholder="Γράψε κάτι.." style="height:200px"></textarea>
+		<!-- ΚΟΥΜΠΙΑΣ ΦΟΡΜΑΣ -->
+		<input type="submit" value="Αποστολή">
+		<input type="reset" value="Καθαρισμός πεδίων">
 		</div>
+	</form>
+		
 	</div>
 	<!-- FOOTER ------>
 	<div class="footer">
+		 <div class="footerTag"> ΕΡΓΑΣΙΑ_ΠΑΠΕΙ_Π19057 @2019 </div>	
 	</div>
 	</body>
 	

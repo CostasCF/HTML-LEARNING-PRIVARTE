@@ -1,0 +1,18 @@
+/*----------------------------------------------Header-------------------------------------*/
+.row1, .row1   a{color:#C0BAB6; background-color:#333333;  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); border-radius: 4px;}
+#header nav{display:block; width:90%; margin:10px; padding:3px; }
+#header nav li{display:inline; margin-right:40px; }
+#header nav li a:hover{color:#FF9900; background-color:#333333;}
+#header {display:block; width:auto; margin:auto;}
+.lastTag {margin-right: 02px;}
+
+
+
+/*-------------------- ΟΡΟΙ ΧΡΗΣΗΣ- ΕΠΙΔΕΙΞΗ ΜΕ ΟΜΑΔΙΚΟ STYLING-----------------*/
+
+* {color: green; } /*Όλα τα στοιχεία*/
+div > p {color: blue;} /* Άμεσος απόγονος */
+ul em { color: red;} /*Περιλαμβάνεται*/
+h2 + p {color:black;} /* Γειτονικά*/
+p + h2 {color:navy;} /* Γειτονικά*/
+

@@ -4,7 +4,6 @@
 #header nav li{display:inline; margin-right:40px; }
 #header nav li a:hover{color:#FF9900; background-color:#333333;}
 #header {display:block; width:auto; margin:auto;}
-.lastTag {margin-right: 02px;}
 
 
 
@@ -16,3 +15,4 @@ ul em { color: red;} /*Περιλαμβάνεται*/
 h2 + p {color:black;} /* Γειτονικά*/
 p + h2 {color:navy;} /* Γειτονικά*/
 
+body {background-color: #f2f2f2;}

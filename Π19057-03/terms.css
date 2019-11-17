@@ -16,3 +16,17 @@ h2 + p {color:black;} /* Γειτονικά*/
 p + h2 {color:navy;} /* Γειτονικά*/
 
 body {background-color: #f2f2f2;}
+
+
+
+.footer {
+	background-color :#333333;
+	height: 30px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 4px;}
+
+/* περιοχομενο footer*/
+.footerTag {text-align: center;
+			color: gray;
+			margin-top: 5px;
+			}

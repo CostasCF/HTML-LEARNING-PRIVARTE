@@ -59,19 +59,19 @@
 	</form>
 	<hr>
 	<!-------------------------------ΦΟΡΜΑ ΥΠΟΛΟΓΙΣΜΟΥ ΜΕ IP ΚΑΙ ΜΑΣΚΑ ΔΙΚΤΥΟΥ------------------------------------------>
-	<form>
-		<div class="container">
+	<form >
+		<div class="container" >
 			<h2 class="EPIKEFALIDA"> Υπολογισμός </h2>
 
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
-				<label for="ip">Διεύθυνση IPv4:</label>
-				<input type="text" id="ip" name="IPv4" placeholder="πχ. 192.168.1.1">
+				<label  for="ip">Διεύθυνση IPv4:</label>
+				<input type="float" id="ip" name="IPv4" placeholder="πχ. 192.168.1.1">
 
 				<label for="NetMusk">Μασκα Δικτύου:</label>
-				<input type="text" id="NetMusk" name="NetMusk" placeholder="πχ. 255.255.255.0">
+				<input type="float" id="NetMusk" name="NetMusk" placeholder="πχ. 255.255.255.0">
 				
 		<!-- ΚΟΥΜΠΙΑΣ ΦΟΡΜΑΣ -->
-		<input type="button" value="Υπολογισμός">
+		<input method="post" action="#" onclick="return CheckForBlanks2(), CheckforNum(), dec2bin(dec)"  type="button" value="Υπολογισμός";>
 		<input type="reset" value="Καθαρισμός πεδίων">
 		</div>
 	</form>

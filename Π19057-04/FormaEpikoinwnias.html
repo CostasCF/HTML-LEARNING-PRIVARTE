@@ -32,55 +32,54 @@
 		</ul>
 		</nav>
     </div>
-	<!---------------------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ -------------------->
-	<div class="ThirdPageBorders">
+
+	<!---------------------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ------------------->
 	<!-- ΕΙΣΑΓΩΓΗ JAVASCRIPT ΣΤΗΝ ΦΟΡΜΑ ---------->
-	<form name="form1" action="#" onsubmit=" return CheckForBlanks()">
+	<form name="SendEmail" onsubmit="return validateForm()" method="post">
 		<div class="container">
 			<h2 class="EPIKEFALIDA"> Φόρμα Επικοινωνίας </h2>
 
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
 
-				<label for="fname">*Ονοματεπώνυμο:</label>
-				<input type="text" id="fname" name="firstname" placeholder="Ονοματεπώνυμο.."/>
-				<label for="Telephone">*Τηλέφωνο:</label>
-				<input type="text" id="Telephone" name="Telephone" placeholder="Τηλέφωνο.."/>
-				
-				<label for="E-mail">*E-mail:</label>
-				<input type="email" id="email" name="email" placeholder="E-mail.."/>
-				<label for="subject">*Ερώτημα:</label>
+			<label for="name">*Ονοματεπώνυμο:</label> 
+				<input type="text" id="name" name="fullname" placeholder="Ονοματεπώνυμο..">
+				<label for="phone">*Τηλέφωνο:</label> 
+				<input type="text" id="phone" name="phone" placeholder="Τηλέφωνο..">
+		
+				<label for="email">*E-mail:</label> 
+				<input type="email" id="email" name="email" placeholder="E-mail..">
+				<label for="request">*Ερώτημα:</label> 
 
-		<textarea id="subject" name="subject" placeholder="Γράψε κάτι.." style="height:200px"></textarea>
+		<textarea id="request" name="request" placeholder="Γράψε κάτι.." style="height:200px"></textarea>
 		<!-- ΚΟΥΜΠΙΑΣ ΦΟΡΜΑΣ -->
-		<h6> Τα πεδία με * ειναι υποχρεωτικά. </h6>
-		<strong><div style="font-size:15px;"> Με την αποστολή συμφωνείται με τους <a href="TermsAndAgreements.html">ΟΡΟΥΣ ΧΡΗΣΗΣ.</a></div> <br></strong>
-		<input type="submit" name="submit" value="Αποστολή" />
-		<input type="reset" value="Καθαρισμός πεδίων"/>
+		<h4> Τα πεδία με * ειναι υποχρεωτικά. </h4>
+				<strong><div style="font-size:15px;"> Με την αποστολή συμφωνείται με τους <a href="TermsAndAgreements.html">ΟΡΟΥΣ ΧΡΗΣΗΣ.</a></div> <br></strong>
+
+		<input id="submit" type="button" value="Αποστολή" >
+		<input type="reset" value="Καθαρισμός πεδίων">
 	</div>
 	</form>
+	
+
 	<hr>
+	
+	
 	<!--Popup window με τα αποτελέσματα-->
-
-	<div id="myModal" class="modal">     
-        <div class="modal-content"> 
-	<div class="container" >
-      <h2>
-                Είστε σίγουροι ότι θέλετε να αποστείλετε το παρακάτω μαιλ;</h2><br><br>
-
-                <form name="form3" action="#"><br>              
-                    <label class="formLabels" for="fname">Ονοματεπώνυμο*</label> <input type="text" id="fname" name="fullName" disabled><br>
-                    <label class="formLabels" for="Telephone">Τηλέφωνο</label> <input type="number" id="Telephone" name="phoneNumber" disabled><br>
-                    <label class="formLabels" for="email">E-mail*</label> <input type="email" id="email" name="email" disabled><br><br>
-                    <label class="formLabels" for="subject"><br> Ερώτημα*</label><textarea id="subject" name="subject" placeholder="Γράψε κάτι..." disabled ></textarea><br><br>
-                      
-                    <input type="submit" id="submitButton" value="ΤΕΛΙΚΗ ΑΠΟΣΤΟΛΗ">
-                    <input type="button" value="Cancel" id="ΑΚΥΡΩΣΗ"><br><br><br>
-                </form>
-	</div></div></div>
-	
-	
-	
-	
+	<div id="popup" class="vBackground">
+	<!-- Content -->
+	<div class="vContent">
+		<div class="vHeader">
+			<h2>Σίσουρα θέλετε να στείλετε το παρακάτω mail με τις ακόλουθες πληροφορίες;</h2>
+		</div>
+		<div class="vBody">
+			<p id="vEmail"></p>
+			<div class="vButtons">
+				<input type="button" id="Send" value="Τελική Αποστολή">
+				<input type="button" id="noSend" value="Ακύρωση">
+			</div>
+		</div>
+	</div>
+	</div>
 	
 	<!-------------------------------ΦΟΡΜΑ ΥΠΟΛΟΓΙΣΜΟΥ ΜΕ IP ΚΑΙ ΜΑΣΚΑ ΔΙΚΤΥΟΥ------------------------------------------>
 
@@ -88,7 +87,7 @@
 	<form action="#" name="form2">
 		<div class="container" >
 		<h2 class="EPIKEFALIDA"> Υπολογισμός </h2>
-		<h6 class="EPIKEFALIDA"> Παρακαλούμε να εισάγεται αριθμο της μορφής x.x.x.x με x < 255 . Ευχαριστούμε πολύ . </h6>
+		<h4 class="EPIKEFALIDA"> Παρακαλούμε να εισάγεται αριθμο της μορφής x.x.x.x με x < 255 . Ευχαριστούμε πολύ . </h4>
 
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
 		<label  for="ipbox">Διεύθυνση IPv4:</label>
@@ -100,51 +99,58 @@
 		<input type="reset" value="Καθαρισμός πεδίων">
 		<br><br>
 
-		<div id="results"><h4 class="EPIKEFALIDA"> IPv4:</h4><div id="binary"></div><br><br></div>
-		<div id="results"><h4 class="EPIKEFALIDA"> Μασκα Δικτύου:</h4><div id="binary1"></div><br><br></div>
+		<div id=""><h4 class="EPIKEFALIDA"> IPv4:</h4><div id="binary"></div><br><br></div>
+		<div id=""><h4 class="EPIKEFALIDA"> Μασκα Δικτύου:</h4><div id="binary1"></div><br><br></div>
+		<div id=""><h4 class="EPIKEFALIDA"> H διεύθυνση δικτύου είναι:</h4><div id="NetworkAdd"></div><br><br>
+		<div id=""><h4 class="EPIKEFALIDA"> H κλάση του δικτύου είναι:</h4><div id="NetworkClass"></div><br><br>
+		<div id=""><h4 class="EPIKEFALIDA"> To δίκτυο μπορεί να υποστηρίξει τον ακόλουθο αριθμό συσκευών:</h4><div id="NetworkCapacity"></div><br><br>
+		<div id=""><h4 class="EPIKEFALIDA"> H μεγαλύτερη διεύθυνση IP του συγκεκριμένου δικτύου είναι:</h4><div id="LargestIpAdd"></div><br><br>
 
 		</div>
 	</form>
-	<script>
-	function CheckForBlanks()
-{
-	if(document.getElementById('fname').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('fname').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
-	}
-	if(document.getElementById('Telephone').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('Telephone').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
-	}
-	if(document.getElementById('email').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('email').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
-	}
-	if(document.getElementById('subject').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('subject').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
-	}
-}
 
-function CheckForBlanks2()
-{
-	if(document.getElementById('ip').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('ip').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+	
+	
+	<script>
+	
+function validateForm() {
+	var name = document.getElementById("name").value;
+	var phone = document.getElementById("phone").value;
+	var email = document.getElementById("email").value;
+	var request = document.getElementById("request").value;
+	if (name=="" || email=="" || phone== "" || request=="") {
+		alert ("Όλα τα πεδία με * είναι υποχρεωτικά")
 	}
-	if(document.getElementById('NetMusk').value == "") {
-		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('NetMusk').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+	else {
+		popup()
 	}
 }
-//----------------------------------------------------------------------------------- ΛΕΙΤΟΥΡΓΙΕΣ IP ΦΟΡΜΑΣ--------------
-// -------------- ΕΛΕΓΧΟΣ ΓΙΑ ΚΕΝΑ ΣΤΗΝ IP ΦΟΡΜΑ--------------
+function sendEmail(name,phone,email,request) {
+	window.location.href = "mailto:" + email + "?subject=Σκάκι&body=Ονοματεπώνυμο: " + name + "%0D%0AΤηλέφωνο:" + phone + "%0D%0A%0D%0A" + request;
+}
+function popup() {
+	var popup = document.getElementById("popup");
+	popup.style.display = "block";
+	var name = document.getElementById("name").value;
+	var phone = document.getElementById("phone").value;
+	var email = document.getElementById("email").value;
+	var request = document.getElementById("request").value;
+	//Email content
+	document.getElementById("vEmail").innerHTML = "Όνομα: " + name + "<br>Τηλέφωνο: " + phone + "<br>Email: " + email + "<br><br>" + request;
+	//Popup Buttons
+	document.getElementById('Send').onclick=function(){sendEmail(name, phone, email, request)};
+	document.getElementById('noSend').onclick=function(){
+		popup.style.display = "none";
+	}
+}
+	document.getElementById('submit').onclick=function(){validateForm()};
+
+//----------------------------MAIL SUBMISSION---------
+function sendEmail(name,phone,email,request) {
+	window.location.href = "mailto:" + email + "?subject=Σκάκι&body=Ονοματεπώνυμο: " + name + "%0D%0AΤηλέφωνο:" + phone + "%0D%0A%0D%0A" + request;
+}
+//--------------------------------- ΛΕΙΤΟΥΡΓΙΕΣ IP ΦΟΡΜΑΣ--------------
+// -------------- ΕΛΕΓΧΟΣ ΓΙΑ ΚΕΝΑ ΣΤΗΝ IP ΦΟΡΜΑ ΜΕ ΔΙΑΦΟΡΕΤΙΚΟ ΤΡΟΠΟ ΑΠΟ ΠΡΙΝ--------------
  function CheckForBlanks2()
 {
 	if(document.getElementById('ipbox').value == "") {
@@ -270,50 +276,11 @@ function CheckforNum()
 	
 }
 }
-// --------ΠΡΟΕΠΙΣΚΟΠΙΣΗ ΣΥΜΠΛΗΡΩΜΕΝΩΝ ΣΤΟΙΧΕΙΩΝ ΦΟΡΜΑΣ ΕΠΙΚΟΙΝΩΝΙΑΣ--------------
-document.getElementById('confirmBtn').onclick = function()
-        {          
-            var firstname = document.forms["form3"]["fname"].value;
-            var email = document.forms["form3"]["email"].value;
-            var Telephone = document.forms["form3"]["Telephone"].value;
-            var subject = document.forms["form3"]["subject"].value;                        
-        
-            var modal = document.getElementById("myModal");
 
-            if (fname != "" || email != "" || subject != "")
-            {             
-                modal.style.display = "block"; 
+// ------------------ IP ΔΙΚΤΥΟΥ --------------------
 
-                document.getElementById('firstname').value = nameInput; 
-                document.getElementById('phoneNumberf2').value = phoneInput;
-                document.getElementById('emailf2').value = emailInput;
-                document.getElementById('requestBoxf2').value = requestInput;
 
-                return true;
-            }
-		}
-		
-		
- document.getElementById('cancelBtn').onclick = function()
-        {
-            window.location.href = "FormaEpikoinwnias.html";
-        }
 
-       
-        document.getElementById('submitBtn').onclick = function()
-        {
-            var fname = "Ονοματεπώνυμο*: " + document.forms["form3"]["fname"].value;
-            var email =  document.forms["form3"]["email"].value;
-            var Telephone = "Τηλέφωνο: " + document.forms["form3"]["Telephone"].value;
-            var subject = document.forms["form3"]["requestBox"].value;  
-
-            var link = "mailto:kkalo878@gmail.com"
-                     + "?cc="
-                     + "&subject= Αυτόματη φόρμα επικοινωνίας"
-                     + "&body=" + fname + "%0D%0A" + Telephone + "%0D%0A" + "%0D%0A" + subject
-            ;
-            window.location.href = link; 
-        }	
 		</script>
 	<!-- FOOTER ------>
 	<div class="footer">

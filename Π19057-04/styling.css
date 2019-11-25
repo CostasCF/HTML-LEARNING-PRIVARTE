@@ -105,6 +105,53 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
   padding: 20px;
 }
 
+/*ΦΟΡΜΑ POP UP */
+.vBackground {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 15px;
+
+}
+/*Content of popup*/
+.vContent {
+		position: relative;
+	background-image: linear-gradient(rgb(255, 255, 255,100), white);
+	background-color: f2f2f2;
+	margin: auto;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 15px;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.4);
+}
+/*Header of popup*/
+.vHeader {
+	padding: px 6px;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+.vBody {
+	padding: 2px 16px;
+}
+
+.vButtons {
+	margin: auto;
+	padding: 30px 0px;
+	text-align: center;
+}
+#vEmail {
+	max-width: 250ch;
+}
 
 
 

@@ -1,0 +1,96 @@
+function CheckForBlanksIPForm(){
+	var ip1 = document.getElementById("ip_address").value;
+	var SubnetMask = document.getElementById("subnet_mask").value;
+	if( ip1 ==""||  SubnetMask=="")
+			alert ("Όλα τα πεδία με * είναι υποχρεωτικά");
+}
+
+
+
+
+
+
+//--------------------- ΕΛΕΓΧΟΣ ΓΙΑ >255 ΑΝΑΜΕΣΑ ΣΤΑ ΚΕΛΙΑ ΤΗΣ IP------------
+
+function CellwithArrowsCheck() {
+	var IP12 = document.getElementById("ip_address").value;
+	var SubnetMask = document.getElementById("subnet_mask").value;
+	var IParray = IP12.split(".",4);
+	var SubnetMaskarray = SubnetMask.split(" ",4);
+	for (i=0; i<4, i++){
+	If( (IParray[i] !!"" )&& SubnetMaskarray[i] !!"" )){
+		if ((IParray[i] > 255)  && (SubnetMaskarray > 255)){
+			alert ("YOU ARE FUCKED");
+			}
+		}
+}
+
+
+/*
+function CheckForBlanksIPForm(){
+
+	var ip1 = document.getElementById("IPBox").value;
+	var SubnetMask = document.getElementById("subnet_mask").value;
+	if( ip1 ==""||  SubnetMask=="")
+			alert ("Όλα τα πεδία με * είναι υποχρεωτικά");
+}
+
+
+//--------------------- ΕΛΕΓΧΟΣ ΓΙΑ >255 ΑΝΑΜΕΣΑ ΣΤΑ ΚΕΛΙΑ ΤΗΣ IP------------
+
+function CellwithArrowsCheck() {
+	var IP12 = document.getElementById("IPBox").value;
+	var SubnetMask = document.getElementById("subnet_mask").value;
+	var IParray = IP12.split(".",4);
+	var SubnetMaskarray = SubnetMask.split(" ",4);
+	for (i=0; i<4, i++){
+	If( (IParray[i] !!"" )&& SubnetMaskarray[i] !!"" )){
+		if ((IParray[i] > 255)  && (SubnetMaskarray > 255)){
+			alert ("YOU ARE FUCKED");
+			}
+		}
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ function CheckForBlanks2()
+{
+	if(document.getElementById('IPBox').value == "") {
+		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
+		document.getElementById('IPBox').style.borderColor = "red";
+		return false; // Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+	}
+	if(document.getElementById('subnet_mask').value == "") {
+		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
+		document.getElementById('subnet_mask').style.borderColor = "red";
+		return false; // Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+	}

@@ -1,5 +1,4 @@
 <!doctype html>
-<!-- ΠΕΡΙΕΧΕΙ ΤΗΝ ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ΓΙΑ ΤΗΝ ΤΡΙΤΗ ΕΡΓΑΣΤΗΡΙΑΚΗ ΑΣΚΗΣΗ ---------------------->
 
 <html>
 	<head>
@@ -35,7 +34,7 @@
 
 	<!---------------------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ------------------->
 	<!-- ΕΙΣΑΓΩΓΗ JAVASCRIPT ΣΤΗΝ ΦΟΡΜΑ ---------->
-	<form name="SendEmail" onsubmit="return validateForm()" method="post">
+	<form name="SendEmail">
 		<div class="container">
 			<h2 class="EPIKEFALIDA"> Φόρμα Επικοινωνίας </h2>
 
@@ -73,7 +72,7 @@
 		</div>
 		<div class="vBody">
 			<p id="vEmail"></p>
-			<div class="vButtons">
+			<div class="ButtonsPOP">
 				<input type="button" id="Send" value="Τελική Αποστολή">
 				<input type="button" id="noSend" value="Ακύρωση">
 			</div>
@@ -81,38 +80,50 @@
 	</div>
 	</div>
 	
-	<!-------------------------------ΦΟΡΜΑ ΥΠΟΛΟΓΙΣΜΟΥ ΜΕ IP ΚΑΙ ΜΑΣΚΑ ΔΙΚΤΥΟΥ------------------------------------------>
-
+						
+	<!---------------------------------------------------POP UP ΓΙΑ ΥΠΟΛΟΓΙΣΜΟ ΚΛΠ------------------------------------------------->
+	<!-- Background -->
+	<div id="NetInfo" class="vBackground"> 
+			<!-- Content -->
+			<div class="vContent">
+				<div class="vHeader">
+					<h2>Βρέθηκαν οι παρακάτω πληροφορίες:</h2>
+				</div>
+				<div class="vBody">
+					<p id="BinaryIP"></p>
+					<p id="BinaryMask"></p>
+					<p id="NetworkAdd"></p>
+					<p id="NetworkClass"></p>
+					<p id="NetworkCapacity"></p>
+					<p id="IPLargest"></p>
+					<div class="ButtonsPOP">
+						<input type="button" id="back" value="Πίσω">
+					</div>
+				</div>
+			</div>
+			</div>										
+	<!-------------------------------------------------------ΦΟΡΜΑ ΜΕ IP ΔΙΕΥΘΥΝΣΗ----------------------------------------------------->
+<form >
+	<div class="container" >
+			<h2 class="EPIKEFALIDA"> Υπολογισμός </h2>
+			<h4 class="EPIKEFALIDA"> Παρακαλούμε να εισάγεται αριθμο της μορφής x.x.x.x με x < 255 . Ευχαριστούμε πολύ . </h4>
+			<h4 class="EPIKEFALIDA"> (Πραγματοποιείται εσωτερικός έλεγχος ορθότητας δεδομένων) </h4>
+					<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
+		<label  for="IPBox">Διεύθυνση IPv4:</label>
+		<input id="IPBox" type="text" name="IPBox" pattern="((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)" placeholder="192.168.1.100"> 
+		<label for="subnet_mask">Μασκα Δικτύου:</label>
+		<input id="subnet_mask" type="text" name="subnet_mask" placeholder="255.255.255.0"> 
+		<!--ΚΟΥΜΠΙΑ ΛΕΙΤΟΥΡΓΕΙΩΝ-->	
+		<input  type="button" onclick="ValidationOfTheIPs(), CheckForBlanks2()" value="Υπολογισμός" >
+		<input type="reset" value="Καθαρισμός πεδίων" >
+	</div>
+</form>
 	
-	<form action="#" name="form2">
-		<div class="container" >
-		<h2 class="EPIKEFALIDA"> Υπολογισμός </h2>
-		<h4 class="EPIKEFALIDA"> Παρακαλούμε να εισάγεται αριθμο της μορφής x.x.x.x με x < 255 . Ευχαριστούμε πολύ . </h4>
-
-		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
-		<label  for="ipbox">Διεύθυνση IPv4:</label>
-		<input id="ipbox"  type="text" placeholder="πχ. 192.168.1.1"><br>
-		<label for="NetMusk">Μασκα Δικτύου:</label>
-		<input id="NetMusk" type="text"  name="NetMusk" placeholder="πχ. 255.255.255.0">
-		<!--ΚΟΥΜΠΙ ΚΑΘΑΡΙΣΜΟΥ-->
-		<input type="reset" onclick="ConvertMe(),ConvertMe2(),CheckForBlanks2(),CheckforNum()" value="Υπολογισμός">
-		<input type="reset" value="Καθαρισμός πεδίων">
-		<br><br>
-
-		<div id=""><h4 class="EPIKEFALIDA"> IPv4:</h4><div id="binary"></div><br><br></div>
-		<div id=""><h4 class="EPIKEFALIDA"> Μασκα Δικτύου:</h4><div id="binary1"></div><br><br></div>
-		<div id=""><h4 class="EPIKEFALIDA"> H διεύθυνση δικτύου είναι:</h4><div id="NetworkAdd"></div><br><br>
-		<div id=""><h4 class="EPIKEFALIDA"> H κλάση του δικτύου είναι:</h4><div id="NetworkClass"></div><br><br>
-		<div id=""><h4 class="EPIKEFALIDA"> To δίκτυο μπορεί να υποστηρίξει τον ακόλουθο αριθμό συσκευών:</h4><div id="NetworkCapacity"></div><br><br>
-		<div id=""><h4 class="EPIKEFALIDA"> H μεγαλύτερη διεύθυνση IP του συγκεκριμένου δικτύου είναι:</h4><div id="LargestIpAdd"></div><br><br>
-
-		</div>
-	</form>
-
 	
 	
 	<script>
-	
+// ΕΛΕΓΧΟΣ ΓΙΑ ΚΕΝΑ ΕΝΤΟΣ ΤΗΣ ΦΟΡΜΑΣ	
+
 function validateForm() {
 	var name = document.getElementById("name").value;
 	var phone = document.getElementById("phone").value;
@@ -120,6 +131,7 @@ function validateForm() {
 	var request = document.getElementById("request").value;
 	if (name=="" || email=="" || phone== "" || request=="") {
 		alert ("Όλα τα πεδία με * είναι υποχρεωτικά")
+
 	}
 	else {
 		popup()
@@ -135,9 +147,8 @@ function popup() {
 	var phone = document.getElementById("phone").value;
 	var email = document.getElementById("email").value;
 	var request = document.getElementById("request").value;
-	//Email content
+	//περιεχομενο email
 	document.getElementById("vEmail").innerHTML = "Όνομα: " + name + "<br>Τηλέφωνο: " + phone + "<br>Email: " + email + "<br><br>" + request;
-	//Popup Buttons
 	document.getElementById('Send').onclick=function(){sendEmail(name, phone, email, request)};
 	document.getElementById('noSend').onclick=function(){
 		popup.style.display = "none";
@@ -145,139 +156,176 @@ function popup() {
 }
 	document.getElementById('submit').onclick=function(){validateForm()};
 
-//----------------------------MAIL SUBMISSION---------
+//----------------------------ΑΠΟΣΤΟΛΗ ΜΕΙΛ---------
 function sendEmail(name,phone,email,request) {
 	window.location.href = "mailto:" + email + "?subject=Σκάκι&body=Ονοματεπώνυμο: " + name + "%0D%0AΤηλέφωνο:" + phone + "%0D%0A%0D%0A" + request;
 }
 //--------------------------------- ΛΕΙΤΟΥΡΓΙΕΣ IP ΦΟΡΜΑΣ--------------
-// -------------- ΕΛΕΓΧΟΣ ΓΙΑ ΚΕΝΑ ΣΤΗΝ IP ΦΟΡΜΑ ΜΕ ΔΙΑΦΟΡΕΤΙΚΟ ΤΡΟΠΟ ΑΠΟ ΠΡΙΝ--------------
- function CheckForBlanks2()
+
+// -------------- ΕΛΕΓΧΟΣ ΓΙΑ ΚΕΝΑ ΣΤΗΝ IP ΦΟΡΜΑ -------------
+function CheckForBlanks2()
 {
-	if(document.getElementById('ipbox').value == "") {
+	if(document.getElementById('IPBox').value == "") {
 		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('ipbox').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+		document.getElementById('IPBox').style.borderColor = "red";
+		return false; 
 	}
-	if(document.getElementById('NetMusk').value == "") {
+	if(document.getElementById('subnet_mask').value == "") {
 		alert("Παρακαλώ συμπληρώστε όλα τα υποχρεωτικά πεδία.");
-		document.getElementById('NetMusk').style.borderColor = "red";
-		return false; /* Θελω η φορμα να μην στείλει τα στοιχεία NotSubmit, κάτι σαν break operation */
+		document.getElementById('subnet_mask').style.borderColor = "red";
+		return false;  
 	}
-}       
-
-//---------------- λειτουργία IPV4 ΣΕ BINARY-----------------
-            function ConvertMe()
-                {
-                    var ipbox = document.getElementById("ipbox");
-                    var s = ipbox.value;
-                    
-                    var split = s.split("\.");
-                    var binaryResult = "";
-                    var decimalResult = "";
-                    for(i=0; i<split.length; i++) {
-                        if(split[i].length > 0){
-                            if(split[i] <= 255) {
-                                number=parseInt(split[i]);
-                                // ΠΡΟΣΘΕΤΩ ΜΗΔΕΝΙΚΑ
-                                switch(number.toString(2).length) {
-                                    case 1:
-                                        binaryResult += "0000000"+number.toString(2);
-                                        break;
-                                    case 2:
-                                        binaryResult += "000000"+number.toString(2);
-                                        break;
-                                    case 3:
-                                        binaryResult += "00000"+number.toString(2);
-                                        break;
-                                    case 4:
-                                        binaryResult += "0000"+number.toString(2);
-                                        break;
-                                    case 5:
-                                        binaryResult += "000"+number.toString(2);
-                                        break;
-                                    case 6:
-                                        binaryResult += "00"+number.toString(2);
-                                        break;
-                                    case 7:
-                                        binaryResult += "0"+number.toString(2);
-                                        break;
-                                    default:
-                                        binaryResult += number.toString(2);
-                                        break;
-                                }
-                                decimalResult = parseInt(binaryResult, 2);
-                            }
-                        }
-                    }
-                    var binary = document.getElementById("binary");
-                    binary.innerHTML = ""+binaryResult+"";
-                }
-
-        
-//---------------- λειτουργία ΜΑΣΚΑ ΔΙΚΤΥΟΥ ΣΕ BINARY-----------------
-            function ConvertMe2()
-                {
-                    var NetMusk = document.getElementById("NetMusk");
-                    var s = NetMusk.value;
-                    
-                    var split = s.split("\.");
-                    var binaryResult = "";
-                    var decimalResult = "";
-                
-                    for(i=0; i<split.length; i++) {
-                        if(split[i].length > 0){
-                            if(split[i] <= 255) {
-                                number=parseInt(split[i]);
-                                // ΠΡΟΣΘΕΤΩ ΜΗΔΕΝΙΚΑ
-                                switch(number.toString(2).length) {
-                                    case 1:
-                                        binaryResult += "0000000"+number.toString(2);
-                                        break;
-                                    case 2:
-                                        binaryResult += "000000"+number.toString(2);
-                                        break;
-                                    case 3:
-                                        binaryResult += "00000"+number.toString(2);
-                                        break;
-                                    case 4:
-                                        binaryResult += "0000"+number.toString(2);
-                                        break;
-                                    case 5:
-                                        binaryResult += "000"+number.toString(2);
-                                        break;
-                                    case 6:
-                                        binaryResult += "00"+number.toString(2);
-                                        break;
-                                    case 7:
-                                        binaryResult += "0"+number.toString(2);
-                                        break;
-                                    default:
-                                        binaryResult += number.toString(2);
-                                        break;
-                                }
-                                decimalResult = parseInt(binaryResult, 2);
-                            }
-                        }
-                    }
-                    var binary = document.getElementById("binary1");
-                    binary.innerHTML = ""+binaryResult+"";
-                }
-// ΕΛΕΓΧΟΣ ΓΙΑ >255
-function CheckforNum()
-{
-	if (document.getElementById('ipbox').value > 255.0){
-		alert("Παρακαλώ εισάγεται στοιχεία με τιμή μικρότερη του 255")
-		document.getElementById('ipbox').style.borderColor = "red";
-
-	}
-	if(document.getElementById('NetMusk').value > 255.0) {
-		alert("Παρακαλώ εισάγεται στοιχεία με τιμή μικρότερη του 255");
-		document.getElementById('NetMusk').style.borderColor = "red";
-	
 }
-}
-
 // ------------------ IP ΔΙΚΤΥΟΥ --------------------
+// ΕΛΕΓΧΟΣ ΟΡΘΟΤΗΤΑΣ IP ΚΑΙ ΜΑΣΚΑΣ
+var ValidationExpresion = /((25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)/;
+function ValidationOfTheIPs() {
+	//ΛΟΓΙΚΕΣ ΤΙΜΕΣ
+	var vIP = false;
+	var vMask = false;
+	//Ip ΕΛΕΓΧΟΣ ΟΡΘΟΤΗΤΑΣ
+	var IP = document.getElementById("IPBox").value;
+	if (ValidationExpresion.test(IP)) {
+		vIP=true;
+	}
+	else {
+		document.getElementById("IPBox").value = "";
+	}
+	//ΜΑΣΚΑ ΔΙΚΤΥΟΥ ΕΛΕΓΧΟΣ ΟΡΘΟΤΗΤΑΣ
+	var sub = document.getElementById("subnet_mask").value;
+	if (ValidationExpresion.test(sub)) {
+		vMask=true;
+	}
+	else {
+		document.getElementById("subnet_mask").value = "";
+	}
+	
+	if (vMask==true && vIP==true) {
+		ConvertToBin();
+	}
+} 
+function MessagePop_IP() {
+	document.getElementById("IP_appear").style.display = "block";
+}
+function MessageHide_IP() {
+	document.getElementById("IP_appear").style.display = "none";
+}
+function MessagePop_Mask() {
+	document.getElementById("Mask_appear").style.display = "block";
+}
+function MessageHide_Mask() {
+	document.getElementById("Mask_appear").style.display = "none";
+}
+function ConvertToBin() {
+	//IP
+	var strIP = document.getElementById("IPBox").value;
+	var tempIP = strIP.split(".");
+	var IP = [];
+	var BinaryIP = [];
+	var lengthIP;
+	for (i=0; i<4; i++) {
+		IP[i] = parseInt(tempIP[i],10);
+		BinaryIP[i] = IP[i].toString(2);
+		lengthIP = BinaryIP[i].length;
+	for (j=0; j < 8-lengthIP; j++) {
+		BinaryIP[i] = "0".concat(BinaryIP[i])
+	}
+	}
+	document.getElementById("BinaryIP").innerHTML = "Η διεύθυνση ip σε δυαδική μορφή ειναι: " + BinaryIP;
+	//SSUBNET MASK
+	var strMask = document.getElementById("subnet_mask").value;
+	var tempMask = strMask.split(".");
+	var Mask = [];
+	var BinaryMask = [];
+	var lengthMask
+	for (i=0; i<4; i++) {
+		Mask[i] = parseInt(tempMask[i],10);
+		BinaryMask[i] = Mask[i].toString(2);
+		lengthMask = BinaryMask[i].length;
+	for (j=0; j < 8-lengthMask; j++) {
+		BinaryMask[i] = "0".concat(BinaryMask[i])
+	}
+	}
+	document.getElementById("BinaryMask").innerHTML = "Η μάσκα δικτύου σε δυαδική μορφή ειναι: " + BinaryMask;
+	NetworkAddress(BinaryIP, BinaryMask);
+}
+function NetworkAddress(BinaryIP, BinaryMask) {
+	//IP ΠΙΝΑΚΑΣ
+	var IPbin = [] 
+	for (i = 0; i < 4; i++) { 
+		IPbin[i] = BinaryIP[i].split("")
+	}
+	//Mask ΠΙΝΑΚΑΣ
+	var MaskBin = []
+	for (i = 0; i < 4; i++) { 
+		MaskBin[i] = BinaryMask[i].split("")
+	}
+	//Network Address
+	var NetworkAddBin = [];
+	var digit;
+	var FinDigit = "";
+	for (i = 0; i < 4; i++) {
+		for (j = 0; j < 8; j++) {
+			if (IPbin[i][j] == 1 && MaskBin[i][j] == 1) {
+				digit = "1";
+			}
+			else {
+				digit = "0";
+			}
+			FinDigit = FinDigit.concat(digit)
+		}
+		NetworkAddBin[i] = FinDigit;
+		FinDigit = "";
+	}
+	//ΜΕΤΑΤΡΟΠΗ ΔΙΕΥΘΥΝΣΗ ΔΙΚΤΥΟΥ ΣΕ 10ΔΙΚΟ
+	var NetworkAddDec = [];
+	for (i=0; i<4; i++) {
+	NetworkAddDec[i] = parseInt(NetworkAddBin[i], 2);
+	}
+	document.getElementById("NetworkAdd").innerHTML = "H διεύθυνση δικτύου είναι: " + NetworkAddDec;
+	NetworkClasses(IPbin, MaskBin, NetworkAddDec, NetworkAddBin);
+}
+function NetworkClasses(IPbin, MaskBin, NetworkAddDec){
+	var NetworkClass;
+	if (IPbin[0][0]==0) {
+		NetworkClass = "A";
+	}
+	else if (IPbin[0][0]==1 && IPbin[0][1]==0) {
+		NetworkClass = "B";
+	}
+	else if (IPbin[0][0]==1 && IPbin[0][1]==1 && IPbin[0][2]==0) {
+		NetworkClass = "C"
+	}
+	else {
+		NetworkClass = "Άλλο"
+	}
+	document.getElementById("NetworkClass").innerHTML = "H κλάση του δικτύου είναι: " + NetworkClass;
+	DeviceSupport(IPbin, MaskBin, NetworkAddDec);
+}
+function DeviceSupport(IPbin, MaskBin, NetworkAddDec) {
+	var n = 0;
+	for (i=0; i<4; i++) {
+		for (j=0; j<8; j++) {
+			if (MaskBin[i][j] == 1) {
+				n += 1;
+			}
+		}
+	}
+	DeviceNumber = Math.pow(2, 32-n);
+	document.getElementById("NetworkCapacity").innerHTML = "To δίκτυο μπορεί να υποστηρίξει " + DeviceNumber + " συσκευές";
+	LargestIp(NetworkAddDec);
+}
+function LargestIp (NetworkAddDec) {
+	var strMask = document.getElementById("subnet_mask").value;
+	var Mask = strMask.split(".");
+	var IPLargest = [];
+	for (i=0; i<4; i++) {
+		IPLargest[i] = -(NetworkAddDec[i]|~Mask[i]);
+	}
+	document.getElementById("IPLargest").innerHTML = "H μεγαλύτερη διεύθυνση IP του συγκεκριμένου δικτύου είναι " + IPLargest;
+	document.getElementById("NetInfo").style.display = "block";
+	document.getElementById("back").onclick = function() {NetInfo.style.display = "none";}
+}
 
 
 

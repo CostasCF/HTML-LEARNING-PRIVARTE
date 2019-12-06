@@ -25,7 +25,7 @@ if (!empty($username) || !empty($password) || !empty($address) || !empty($paymen
     } else {
 		// ΕΙΣΑΓΩΓΗΗ ΜΕΣΑ ΣΤΗΝ ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ " ΡΕΓΙΣΤΕΡ "
      $SELECT = "SELECT email From register Where email = ? Limit 1";
-	 $INSERT = "INSERT Into register (username, password, address, payment, email, subject, age, phone, date) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
+	 $INSERT = "INSERT Into register (username, password, payment, email, subject, age, phone, date, address) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
      //ΠΡΟΕΤΟΙΜΑΣΙΑ ΣΥΝΔΕΣΗΣ
      $stmt = $conn->prepare($SELECT);
      $stmt->bind_param("s", $email);
@@ -38,46 +38,17 @@ if (!empty($username) || !empty($password) || !empty($address) || !empty($paymen
       $stmt = $conn->prepare($INSERT);
       $stmt->bind_param("sssssiiss", $username, $password, $payment, $email, $subject, $age, $phone, $date, $address);
       $stmt->execute();
-      echo "New record inserted sucessfully";
+      echo "Νέο αρχείο καταχωρήθηκε με επιτυχία!";
      } else {
-      echo "Someone already register using this email";
+      echo "Κάποιος έχει χρησιμοποιήσει ήδη αυτο το email, δοκιμάστε με άλλο.";
      }
      $stmt->close();
      $conn->close();
     }
 
 } else {
- echo "All field are required";
+ echo "Όλα τα πεδία είναι υποχρεωτικά";
  die();
 }
-
-/*Δημιουργία ερωτήματος
-if (isset($_POST['username']) && $_POST['username']!='' ){
-	$sql = "SELECT * password,username,payment,email,age,phone,subject,date,address FROM register WHERE username='".$_POST['username']."'";
-} 
-$result = mysqli_query($conn, $sql);
-//έλεγχος αποτελεσμάτων
-if (mysqli_num_rows($result) > 0) {
- echo "<table style='border:1px solid black'>";
-echo
-"<tr><th>username</th><th>Πρώτο</th><th>Δεύτερο</th><th>Τρίτο</th><th>Τέταρτο</th><th>Πέμπτο</th></tr>";
-// εκτύπωση αποτελεσμάτων
- while($row = mysqli_fetch_assoc($result)) {
-echo "<tr><td>".$row['username']."</td>".
-"<td>".$row['password']."</td>".
-"<td>".$row['username']."</td>".
-"<td>".$row['email']."</td>".
-"<td>".$row['age']."</td>".
-"<td>".$row['subject']."</td>".
-"<td>".$row['address']."</td>";
-"<td>".$row['phone']."</td></tr>";
- }
-echo "</table>" ;
-} else {
- echo "0 εγγραφές βρέθηκαν";
-}
-
-*/
-
 
 ?>

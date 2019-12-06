@@ -20,6 +20,7 @@ if(isset($_POST['search'])) {
 		$output = 'Το στοιχείο αναζήτησης δεν βρεθηκε';
 	}else{
 		while($row= mysqli_fetch_array($query)){
+			// εξοδος δεδομενων
 			$username = $row['username'];
 			$password = $row['password'];
 			$payment = $row['payment'];
@@ -29,9 +30,7 @@ if(isset($_POST['search'])) {
 			$subject = $row['subject'];
 			$date = $row['date'];
 			$address = $row['address'];
-			// εξοδος δεδομενων
-			$output .= '<div>'.$username.' '.$password.' '.$payment.' '.$email.' '.$age.' '.$phone.' '.$subject.' '.$date.' '.$address.'</div>';
-		}
+		} 
 	}
 }
 ?>
@@ -85,6 +84,9 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 			color: gray;
 			margin-top: 5px;
 			} 
+			
+.results {   border-collapse: collapse;
+ border: 3px solid black;}			
   </style>
 </head>
 <body>
@@ -97,16 +99,18 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
  	<form id="form1" method="post" action="">
 		<div class="container">
 			<h2 class="EPIKEFALIDA"> Φόρμα Επικοινωνίας </h2>
+			<h4 class="EPIKEFALIDA"> Παρακαλούμε εισάγεται μόνο λατινικούς χαρακτήρες μέσα στο ονοματεπώνυμο και τον κωδικό. Ευχαριστούμε πολύ. </h2>
+			<h5 class="EPIKEFALIDA"> Αν δεν τηρηθεί ο παραπάνω κανονας, τότε δεν εισάγεται τίποτα στα συγκεκριμένα κενα. </h5>
 
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
-				<label for="username">*Ονοματεπώνυμο:</label>
-				<input type="text" id="username" name="username" required placeholder="Ονοματεπώνυμο..">
+				<label for="username">*Ονοματεπώνυμο:</label> <!-- ΕΠΙΤΡΕΠΟΥΜΑΙ ΜΟΝΟ ΛΑΤΙΝΙΚΟ ΑΛΦΑΒΗΤΟ ΣΤΟ ΟΝΟΜΑΤΕΠΩΝΥΜΟ --->
+				<input type="text" id="username" name="username"   onkeypress="return (event.charCode > 64 &&  event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required placeholder="Ονοματεπώνυμο..">
 				
-				<label for="password">*Κωδικός:</label>
-				<input type="password" id="password" name="password" required placeholder="Κωδικός..">
+				<label for="password">*Κωδικός:</label> <!-- ΕΠΙΤΡΕΠΟΥΜΑΙ ΜΟΝΟ ΛΑΤΙΝΙΚΟ ΑΛΦΑΒΗΤΟ ΣΤΟ password ΣΥΜΦΩΝΑ ΜΕ ΤΑ ΔΕΔΟΜΕΝΑ ΤΗΣ ΑΣΚΗΣΗΣ --->
+				<input type="password" id="password" name="password"     onkeypress="return (event.charCode > 64 &&  event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)" required placeholder="Κωδικός..">
 
 				<label for="Telephone">*Τηλέφωνο:</label>
-				<input type="text" id="phone" name="phone" required placeholder="Τηλέφωνο..">
+				<input type="text" id="phone" name="phone"  onkeypress="return onlyNumberKey(event)"  required placeholder="Τηλέφωνο.."> 
 				
 				<label for="Address">*Διεύθυνση:</label>
 				<input type="text" id="address" name="address" required placeholder="Διεύθυνση..">
@@ -115,9 +119,8 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 				<input type="email" id="email" name="email" required placeholder="E-mail..">
 				
 				<label for="payment"> *ΤΡΟΠΟΣ ΠΛΗΡΩΜΗΣ: </label> <br><br><br><br>
-				<em>VISA / MASTERCARD</em><input type="radio" name="payment" value="VISA/MASTERCARDCASH" required> <br><br>
-                <em>CASH</em><input type="radio" name="payment" value="CASH" required> 
-				 <em>ΝΕΦΡΟ</em><input type="radio" name="payment" value="ΝΕΦΡΟ" required> 
+				<em>VISA / MASTERCARD</em><input type="radio" name="payment" value="VISA/MASTERCARD" required> <br><br>
+                <em>ΜΕΤΡΗΤΑ</em><input type="radio" name="payment" value="ΜΕΤΡΗΤΑ" required> 
 				<br><br>
 				<label for="subject">*Ερώτημα:</label>
 				<textarea id="subject" name="subject" required placeholder="Γράψε κάτι.." style="height:200px"></textarea>
@@ -126,15 +129,15 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 				<input type="date" id="date" name="date" required >
 				
 				
-				<label for="subject">*Ηλιακιακό γκρουπ:</label>
+				<label for="subject">*Ηλιακία:</label>
 				<select name="age" required>
-					<option selected hidden value=""><em>Επιλέξτε ηλικιακό γκρουπ</em></option>
-					<option value="18"><18</option>
-					<option value="30">18-30</option>
-					<option value="50">31-50</option>
-					<option value="60">51-60</option>
-					<option value="70">61-70</option>
-					<option value="71">71+</option>
+					<option selected hidden value=""><em>Πόσο χρονών είστε;</em></option>
+					<!-- DROP DOWN ΛΙΣΤΑ ΗΛΙΚΙΑΣ ΜΕ PHP! -->
+					<?php
+						for($i = 1; $i <= 100; $i += 1){
+						echo("<option value='{$i}'>{$i}</option>");
+						}		
+					?>
 				</select>
 		<!-- ΚΟΥΜΠΙΑΣ ΦΟΡΜΑΣ -->
 		<h6> Τα πεδία με * ειναι υποχρεωτικά. </h6>
@@ -155,7 +158,21 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 		<!-- κουμπια φορμας --->
 		<input type="submit" value="Αναζήτηση">
 		<input type="reset" value="Καθαρισμός πεδίων">
-		<?php print("$output");?>
+		<br>
+		<table class="results">
+		<tr class="results">
+		<!-- ΔΕΝ ΕΙΝΑΙ BUG ΕΠΕΙΔΗ ΒΓΑΖΕΙ INVALID INPUT ΠΡΙΝ ΓΙΝΕΙ Η ΑΝΑΖΗΤΗΣΗ, ΜΕ ΤΟ ΠΟΥ ΔΩΣΕΙ INPUT Ο ΧΡΗΣΤΗΣ ΣΤΗΝ ΦΟΡΜΑ, ΕΜΦΑΝΙΖΕΙ ΚΑΝΟΝΙΚΑ ΤΑ ΔΕΔΟΜΕΝΑ ΑΠΟ ΤΗΝ ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ register --->
+			<td class="results"><em><b>Ονοματεπώνυμο: </b></em>	<br>	<?php print ("$username")?></td>
+			<td class="results"><em><b>Κωδικός: 	</b></em>	<br> 	<?php print ("$password")?></td>
+			<td class="results"><em><b>Τροπος Πληρωμης: </b></em> <br>	<?php print ("$payment")?></td>
+			<td class="results"><em><b>Email: 	</b>	</em>	<br>	<?php print ("$email")?></td>
+			<td class="results"><em><b>Ηλικία: 	</b>	</em>	<br>	<?php print ("$age")?></td>
+			<td class="results"><em><b>Τηλέφωνο: </b>	</em>	<br>	<?php print ("$phone")?></td>
+			<td class="results"><em><b>Λεπτομέρειες ερωτήματος: </b> </em><br> <?php print ("$subject")?></td>
+			<td class="results"><em><b>Ημερομονία γεννησης: </b></em> <br> <?php print ("$date")?></td>
+			<td class="results"><em><b>Διεύθυνση: </b></em><br> <?php print ("$address")?></td>
+		</tr>
+		</table>
 
 	</div>
 	</form>
@@ -165,7 +182,15 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 	<div class="footer">
 		 <div class="footerTag"> ΕΡΓΑΣΙΑ_ΠΑΠΕΙ_Π19057 @2019 </div>	
 	</div>
-	</body>
+	<script> 
+	function onlyNumberKey(evt) { 
+       // Επιτρέπονται μόνο αριθμοί στο πεδίο του τηλεφώνου
+        var ASCIICode = (evt.which) ? evt.which : evt.keyCode 
+        if (ASCIICode > 31 && (ASCIICode < 48 || ASCIICode > 57)) 
+            return false; 
+        return true; 
+    } 
+</script> 
 
 </body>
 </html>

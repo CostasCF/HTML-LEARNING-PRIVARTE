@@ -10,11 +10,9 @@ $subject = $_POST['subject'];
 $date = $_POST['date'];
 $address = $_POST['address'];
 
-
-
 //--------ελεγχος κενων--------------------------
 if (!empty($username) || !empty($password) || !empty($address) || !empty($payment) || !empty($email) || !empty($age) || !empty($date) || !empty($subject) || !empty($phone)) {
- $host = "localhost";
+	$host = "localhost";
     $dbUsername = "root";
     $dbPassword = "";
     $dbname = "assignment6";
@@ -23,8 +21,8 @@ if (!empty($username) || !empty($password) || !empty($address) || !empty($paymen
     if (mysqli_connect_error()) {
      die('Connect Error('. mysqli_connect_errno().')'. mysqli_connect_error());
     } else {
-		// ΕΙΣΑΓΩΓΗΗ ΜΕΣΑ ΣΤΗΝ ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ " ΡΕΓΙΣΤΕΡ "
-     $SELECT = "SELECT email From register Where email = ? Limit 1";
+	// ΕΙΣΑΓΩΓΗΗ ΜΕΣΑ ΣΤΗΝ ΒΑΣΗ ΔΕΔΟΜΕΝΩΝ " register "
+     $SELECT = "SELECT email From register Where email = ? Limit 1"; // μεχρι ενα email
 	 $INSERT = "INSERT Into register (username, password, payment, email, subject, age, phone, date, address) values(?, ?, ?, ?, ?, ?, ?, ?, ?)";
      //ΠΡΟΕΤΟΙΜΑΣΙΑ ΣΥΝΔΕΣΗΣ
      $stmt = $conn->prepare($SELECT);
@@ -42,6 +40,7 @@ if (!empty($username) || !empty($password) || !empty($address) || !empty($paymen
      } else {
       echo "Κάποιος έχει χρησιμοποιήσει ήδη αυτο το email, δοκιμάστε με άλλο.";
      }
+	 //κλεισιμο συνδεσης
      $stmt->close();
      $conn->close();
     }

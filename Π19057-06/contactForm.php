@@ -129,7 +129,7 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 				<input type="date" id="date" name="date" required >
 				
 				
-				<label for="subject">*Ηλιακία:</label>
+				<label for="subject">*Ηλικία:</label>
 				<select name="age" required>
 					<option selected hidden value=""><em>Πόσο χρονών είστε;</em></option>
 					<!-- DROP DOWN ΛΙΣΤΑ ΗΛΙΚΙΑΣ ΜΕ PHP! -->

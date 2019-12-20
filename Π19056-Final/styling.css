@@ -1,0 +1,80 @@
+/* --------------------HEADER -------------------------*/
+
+.container > ul li { /* Η παράμετρος list-style-type δουλεύει μόνο στο ul element οποτε στοχεύουμαι μόνο αυτό */
+    list-style-type: none; 
+}
+.container {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 40px 40px;
+  text-decoration: none;
+  margin-left: 50px;
+  margin-right: 50px;
+  font-size: 20px;
+  
+}
+
+li a:hover {
+  background-color: #111;
+  color: white;
+}
+
+.active {
+  background-color: #e6e7e8;
+}
+
+/*------------ EIKONES-------------- */
+body, html {
+  height:100%;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+
+}
+
+/*---KENTRIKH EIKONA SPANOULIS---*/
+.bg {
+	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/span1.jpg");
+  /* Half height */
+  height: 79%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover; 
+
+}
+/* EIKONA LOGO OLYMPIAKOY */	
+img.logoImg{
+	width:150px;
+	height:150px;
+}	
+/* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
+.hero-text {
+  font-size: 30px;
+  text-align: left;
+  position: absolute;
+  top: 25%;
+  left: 69%;
+  margin-right: 35px;
+  color: white;
+}
+
+
+
+

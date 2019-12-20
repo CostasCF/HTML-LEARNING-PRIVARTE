@@ -22,10 +22,10 @@ li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 40px 40px;
+  padding: 25px 25px;
   text-decoration: none;
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 10px;
+  margin-right: 10px;
   font-size: 20px;
   
 }
@@ -36,7 +36,8 @@ li a:hover {
 }
 
 .active {
-  background-color: #e6e7e8;
+  background-color: #f55858;
+  color: white;
 }
 
 /*------------ EIKONES-------------- */
@@ -49,9 +50,9 @@ body, html {
 
 /*---KENTRIKH EIKONA SPANOULIS---*/
 .bg {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url("images/span1.jpg");
+	background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("images/span1.jpg");
   /* Half height */
-  height: 79%; 
+  height: 78%; 
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -61,18 +62,54 @@ body, html {
 }
 /* EIKONA LOGO OLYMPIAKOY */	
 img.logoImg{
-	width:150px;
-	height:150px;
+	margin-top: 1px;
+	width:85px;
+	height:85x;
 }	
 /* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
 .hero-text {
   font-size: 30px;
-  text-align: left;
+  text-align: bottom;
   position: absolute;
   top: 25%;
   left: 69%;
   margin-right: 35px;
   color: white;
+}
+
+/* ΓΙΑ ΚΙΝΗΤΑ -------------------- */
+@media screen and (max-width: 945px) {
+	ul,li {
+  float: none;
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 0px;
+  text-decoration: none;
+  margin-left: 2px;
+  margin-right:2px;
+  font-size: 15px;
+  
+}
+	/* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
+	.hero-text {
+		font-size: 30px;
+		text-align: left;
+		position: absolute;
+		top: 45%;
+		left: 69%;
+		margin-right: 35px;
+		color: white;
+	}
+
+	/* EIKONA LOGO OLYMPIAKOY */	
+	img.logoImg{
+		width:85px;
+		height:85px;
+		position:relative;
+		left: 1%;
+	/* αλλαγη nav bar */
+
 }
 
 

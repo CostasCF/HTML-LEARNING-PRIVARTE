@@ -3,15 +3,28 @@
 .container > ul li { /* Η παράμετρος list-style-type δουλεύει μόνο στο ul element οποτε στοχεύουμαι μόνο αυτό */
     list-style-type: none; 
 }
-.container {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+/*.container {
   overflow: hidden;
   background-color: white;
   display: flex;
   justify-content: center;
   align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  border-radius: 4px;
+}*/
+
+
+.container {
+    height: 45px;
+    position: relative;
+    background-color: #dc0d15;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #ad0006;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
 }
 
 li {
@@ -22,7 +35,7 @@ li a {
   display: block;
   color: black;
   text-align: center;
-  padding: 25px 25px;
+  padding: 10px ;
   text-decoration: none;
   margin-left: 10px;
   margin-right: 10px;
@@ -31,7 +44,7 @@ li a {
 }
 
 li a:hover {
-  background-color: #111;
+  background-color: #f55858;
   color: white;
 }
 
@@ -39,20 +52,29 @@ li a:hover {
   background-color: #f55858;
   color: white;
 }
-
-/*------------ EIKONES-------------- */
-body, html {
-  height:100%;
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-
+/* EIKONA LOGO OLYMPIAKOY */	
+img.logoImg{
+	margin-top: 1px;
+	width:40px;
+	height:40x;
 }
+
+
+#BodySpan {
+	
+  background-image: url('images/spanoulis_big.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+  width: auto;
+  height: auto;
+	}
 
 /*---KENTRIKH EIKONA SPANOULIS---*/
 .bg {
-	background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("images/span1.jpg");
-  /* Half height */
-  height: 78%; 
+	background-image: linear-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0.25)), url("images/span6.jpg");
+  /* full height */
+  height: 100%; 
 
   /* Center and scale the image nicely */
   background-position: center;
@@ -60,59 +82,17 @@ body, html {
   background-size: cover; 
 
 }
-/* EIKONA LOGO OLYMPIAKOY */	
-img.logoImg{
-	margin-top: 1px;
-	width:85px;
-	height:85x;
-}	
+	
 /* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
 .hero-text {
   font-size: 30px;
-  text-align: bottom;
+  text-align: left;
   position: absolute;
   top: 25%;
-  left: 69%;
+  left: 10%;
   margin-right: 35px;
   color: white;
 }
-
-/* ΓΙΑ ΚΙΝΗΤΑ -------------------- */
-@media screen and (max-width: 945px) {
-	ul,li {
-  float: none;
-  display: block;
-  color: black;
-  text-align: center;
-  padding: 0px;
-  text-decoration: none;
-  margin-left: 2px;
-  margin-right:2px;
-  font-size: 15px;
-  
-}
-	/* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
-	.hero-text {
-		font-size: 30px;
-		text-align: left;
-		position: absolute;
-		top: 45%;
-		left: 69%;
-		margin-right: 35px;
-		color: white;
-	}
-
-	/* EIKONA LOGO OLYMPIAKOY */	
-	img.logoImg{
-		width:85px;
-		height:85px;
-		position:relative;
-		left: 1%;
-	/* αλλαγη nav bar */
-
-}
-
-
 /*------ ΠΛΗΡΟΦΟΡΙΕΣ/ ΕΙΚΟΝΕΣ ΠΟΥ ΑΛΛΑΖΟΥΝ ΠΛΕΥΡΑ, FLIP IMAGES ------------- > */
 
 
@@ -121,6 +101,7 @@ img.logoImg{
   width: 300px;
   height: 300px;
   perspective: 1000px;
+
 }
 
 .flip-card-inner {
@@ -142,6 +123,7 @@ img.logoImg{
   width: 100%;
   height: 100%;
   backface-visibility: hidden;
+
 }
 
 .flip-card-front {
@@ -155,3 +137,68 @@ img.logoImg{
   transform: rotateY(180deg);
 }
 
+
+/* ----------------------------ΚΑΤΑΣΤΗΜΑ ---------------- */
+#BodyStore {
+	
+  background-image: url('images/cover1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+	}
+	
+/*---------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ---------------------------- */
+
+/* περιοχες εντος φορμας που μπορεις να συμπληρώσεις στοιχεία */
+input[type=text], textarea , input[type=email] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  
+}
+/*κουμπια */
+input[type=submit] ,input[type=reset] ,input[type=button] {
+  background-color: #dc0d15;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* λειτουργια οταν το βελακι παει πανω στο πληκτρο */
+input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
+  background-color: #ff7a7a;
+}
+
+/*φορμα*/
+.containerForm {
+  border-radius: 5px;
+  background-color: #a3a3a3;
+  padding: 20px;
+  position: relative;
+  margin-left:20%;
+  margin-right:20%;
+}
+/*----------------- footer --------------*/
+
+.footer {
+	margin-right: 230px;
+	height: 30px;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	width: 100%;
+	background-color: #dc0d15;
+	color: white;
+	text-align: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 4px;
+}
+
+hr {background-color:#c9c9c9; height:2px; border:0; width: 97.5% }

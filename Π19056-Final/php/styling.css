@@ -1,0 +1,259 @@
+/* --------------------HEADER -------------------------*/
+
+.container > ul li { /* Η παράμετρος list-style-type δουλεύει μόνο στο ul element οποτε στοχεύουμαι μόνο αυτό */
+    list-style-type: none; 
+}
+
+.container {
+    height: 45px;
+    position: relative;
+    background-color: #dc0d15;
+    left: 0;
+    right: 0;
+    border-bottom: 2px solid #ad0006;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 10px ;
+  text-decoration: none;
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 20px;
+  
+}
+
+li a:hover {
+  background-color: #f55858;
+  color: white;
+}
+
+.active {
+  background-color: #f55858;
+  color: white;
+}
+/* EIKONA LOGO OLYMPIAKOY */	
+img.logoImg{
+	margin-top: 1px;
+	width:40px;
+	height:40x;
+}
+
+
+
+
+/*---KENTRIKH EIKONA SPANOULIS---*/
+#BodySpan {
+  background-image: url("images/spanoulis_big2.png");
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: 100% 100%;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+	
+/* ΠΕΡΙΓΡΑΦΗ ΕΙΚΟΝΑΣ ΣΠΑΝΟΥΛΗ */
+.hero-text {
+  text-align: left;
+  position: absolute;
+  top: 25%;
+  left: 2%;
+  color: white;
+}
+/*------ ΠΛΗΡΟΦΟΡΙΕΣ/ ΕΙΚΟΝΕΣ ΠΟΥ ΑΛΛΑΖΟΥΝ ΠΛΕΥΡΑ, FLIP IMAGES ------------- > */
+
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  perspective: 1000px;
+
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #2980b9;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+
+/* ----------------------------ΚΑΤΑΣΤΗΜΑ ---------------- */
+#BodyStore {
+	
+  background-image: url('images/cover1.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;  
+  background-size: cover;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex:30%;
+  max-width: 30%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+  
+}
+	
+/*---------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ---------------------------- */
+#bodyContact {
+	background-color:#ededed;
+			
+}
+  /* περιοχες εντος φορμας που μπορεις να συμπληρώσεις στοιχεία */
+input[type=text], textarea , input[type=email], input[type=password], input[type=radio] {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+  
+}
+/*κουμπια */
+input[type=submit] ,input[type=reset] ,input[type=button] {
+  background-color: #dc0d15;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* λειτουργια οταν το βελακι παει πανω στο πληκτρο */
+input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
+  background-color: #f55858;
+}
+
+/*φορμα*/
+.containerF {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+  margin-left: 30%;
+  margin-right:30%;
+  margin-bottom:4%;
+  margin-top:2%;
+}
+  
+
+/*ΦΟΡΜΑ POP UP */
+.vBackground {
+	display: none;
+	position: fixed;
+	z-index: 1;
+	padding-top: 100px;
+	left: 0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0,0,0,0.4);
+	border-radius: 15px;
+
+}
+/*Content of popup*/
+.vContent {
+	position: relative;
+	background-image: linear-gradient(rgb(255, 255, 255,100), white);
+	background-color: f2f2f2;
+	margin: auto;
+	padding: 0;
+	border: 1px solid black;
+	border-radius: 15px;
+	width: 80%;
+	box-shadow: 0 4px 8px 0 rgba(0,0,0,0.4),0 6px 20px 0 rgba(0,0,0,0.4);
+}
+/*Header of popup*/
+.vHeader {
+	padding: px 6px;
+	color: black;
+	text-align: center;
+	text-decoration: none;
+}
+
+.vBody {
+	padding: 2px 16px;
+}
+
+.ButtonsPOP {
+	margin: auto;
+	padding: 30px 0px;
+	text-align: center;
+}
+#vEmail {
+	max-width: 250ch;
+
+}
+
+/*----------------- footer --------------*/
+
+.footer {
+	height: 30px;
+	position: fixed;
+	right: 0;
+	left: 0;
+	bottom: 0;
+	background-color: #dc0d15;
+	color: black;
+	text-align: center;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	border-radius: 4px;
+	margin-left: 10px;
+	margin-right:10px;
+	margin-bottom:6px;
+}
+.footerTag {font-size: small;}
+hr {background-color:#c9c9c9; height:2px; border:0; width: 97.5% }

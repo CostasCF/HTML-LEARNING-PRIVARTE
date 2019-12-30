@@ -5,7 +5,7 @@
   	<link rel="stylesheet" href="styling.css" />
 
 </head>
-<body onload="recieved();">
+<body id="BodyCart" onload="recieved();">
 <!----- HEADER ---->
 	<div class="container">
 	<ul>
@@ -19,19 +19,21 @@
 
 
 <!------- ΦΟΡΜΑ ΕΙΣΑΓΩΓΗΣ ΣΤΟΙΧΕΙΩΝ ΧΡΗΣΤΗ -------------------------------->
-<form action="insertDB.php" method="POST">
+<form action="insertDB.php" method="POST" id="dataForm" name="dataForm">
 		<div class="containerF">
 			<h2 class="EPIKEFALIDA"> Μέθοδος πληρωμής και στοιχεία αποστολής. </h2>
 
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
 				<label for="username">*Ονοματεπώνυμο:</label>
-				<input type="text" id="username" name="username"   required placeholder="Ονοματεπώνυμο..">
+				<input type="text" id="username" name="username" oncopy="return false" onpaste="return false"  
+				  onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  maxlength="60" required placeholder="Ονοματεπώνυμο..">
 				
 				<label for="password">*Κωδικός:</label> 
-				<input type="password" id="password" name="password"  required placeholder="Κωδικός..">
+				<input type="password" id="password" name="password" maxlength="100" required placeholder="Κωδικός..">
 
 				<label for="Telephone">*Τηλέφωνο:</label>
-				<input type="text" id="phone" name="phone"    required placeholder="Τηλέφωνο.."> 
+				<input type="text" id="phone" name="phone" maxlength="10"  oncopy="return false" onpaste="return false" 
+				onkeypress="return !(event.charCode > 31 &&  (event.charCode < 48 || event.charCode > 57))" required placeholder="Τηλέφωνο.."> 
 				
 				<label for="Address">*Διεύθυνση:</label>
 				<input type="text" id="address" name="address" required placeholder="Διεύθυνση..">
@@ -45,23 +47,12 @@
                 <em>ΑΝΤΙΚΑΤΑΒΟΛΗ (€)</em><input type="radio" name="payment" value="ΜΕΤΡΗΤΑ" required> 
 				<br><br>
 				<label for="subject">*Ερώτημα:</label>
-				<textarea id="subject" name="subject" required placeholder="Γράψε κάτι.." style="height:200px"></textarea>
+				<textarea id="subject" name="subject" maxlength="500" required placeholder="Γράψε κάτι.." style="height:60px"></textarea>
 				
 				<label for="date">*Ημερομονία Γέννησης:</label>
 				<input type="date" id="date" name="date" required >
-				
-				
-				<label for="subject">*Ηλικία:</label>
-				<select name="age" required>
-					<option selected hidden value=""><em>Πόσο χρονών είστε;</em></option>
-					<!-- DROP DOWN ΛΙΣΤΑ ΗΛΙΚΙΑΣ ΜΕ PHP! -->
-					<?php
-						for($i = 1; $i <= 100; $i += 1){
-						echo("<option value='{$i}'>{$i}</option>");
-						}		
-					?>
-				</select>
-				<br><br>
+				<br><br><br>
+
 				<label for="red"><b>Μπλουζάκι "ΚΟΚΚΙΝΟ" </b></label> 
 				<input readonly type="text" name="red" id="red" value="Readonly Value">	
 				<label for="white"><b>Μπλουζάκι "ΛΕΥΚΟ": </b></label> 
@@ -72,7 +63,7 @@
 				<input readonly type="text" name="money" id="money"  value="Readonly Value">				
 		<!-- ΚΟΥΜΠΙΑΣ ΦΟΡΜΑΣ -->
 		<h6> Τα πεδία με * ειναι υποχρεωτικά. </h6>
-		<input type="submit" value="Αποστολή" id="submit"onclick="validateForm();">
+		<input type="submit" value="Αποστολή" id="btnSubmit">
 		<input type="button" value ="Ακύρωση" onclick="location.href='store.php';"> 
 	</div>
 </form>
@@ -83,21 +74,7 @@
 		 <div class="footerTag"> ΕΡΓΑΣΙΑ_ΠΑΠΕΙ_Π19057 @2019 </div>	
 	</div>
 	<script> 
-function validateForm(){
-	var phone = document.getElementById("phone").value;
-	var phonelogic = true;
-	let phonereg = /\D+/ // οποιοδηποτε χαρακτηρα
-	//ελεγχος τηλεφωνου
-	if (!(phonereg.test(phone))){ // εαν δεν περιέχει καποιο χαρακτήρα, το phonelogic γινεται false;
-		phonelogic = false;
-	}else {
-		alert("Το τηλέφωνο πρεπει να περιέχει μόνο αριθμούς.");
-		document.getElementById('phone').style.borderColor = "red";
-		var submit = document.getElementById('submit');
-		preventDefault(submit);
-		return false;
-	}
-}
+	
 	// παραλαβη τιμων απο την προηγουμενη σελιδα
 function recieved() {
 		var quantityWhite = localStorage.getItem("storageWhite");
@@ -109,6 +86,7 @@ function recieved() {
 		document.getElementById('sumq').value = quantityR;
 		document.getElementById('money').value = moneyR;
 	}
+
 </script> 
 </body>
 </html>

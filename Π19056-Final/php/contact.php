@@ -58,7 +58,6 @@
 		</div>
 	</div>
 </div>
-	<hr>
 	<!-- FOOTER-------------------->
 	<div class="footer">
 		 <div class="footerTag"> ΕΡΓΑΣΙΑ_ΠΑΠΕΙ_Π19057 @2019 </div>	
@@ -117,7 +116,6 @@ function sendEmail(name,phone,email,request) {
 	window.location.href = "mailto:" + email + "?subject=&body=Ονοματεπώνυμο: " + name + "%0D%0AΤηλέφωνο:" + phone + "%0D%0A%0D%0A" + request;
 }
 
-var email = document.getElementById("email").value;
 function popup() {
 	var popup = document.getElementById("popup");
 	//styling με javascript και εισαγωγη values 
@@ -131,7 +129,7 @@ function popup() {
 	document.getElementById("vEmail").style.fontSize = "larger";	
 	document.getElementById("vEmail").style.textAlign = "center";	
 	document.getElementById("vEmail").style.floatval = "left";	
-	document.getElementById("vEmail").innerHTML = " <b>Όνομα:</b> " + name + "<b><br>Τηλέφωνο:</b> " + phone + "<b><br>Email: </b> " + email + "<br><br>" + "<b>Ερώτημα:  </b>" + request;
+	document.getElementById("vEmail").innerHTML =  "<b>Όνομα: </b> " + name + "<b><br>Τηλέφωνο: </b>" + phone + "<b><br>Email: </b>" + email + "<br><br>" + "<b>Ερώτημα:  </b>" + request;
 	document.getElementById('Send').onclick=function(){sendEmail(name, phone, email, request)};
 	document.getElementById('noSend').onclick=function(){
 		popup.style.display = "none";

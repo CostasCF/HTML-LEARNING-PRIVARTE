@@ -16,6 +16,7 @@
 		<li><a href="contact.php"><b>ΕΠΙΚΟΙΝΩΝΙΑ</b></a></li>
 	</ul>
 	</div>
+<div class="Store" >
 	<div class="row">
 		<div class="column">
 		<!-- ΠΡΩΤΗ ΕΙΚΟΝΑ --->
@@ -25,6 +26,7 @@
 			<input type="number" name="quantity" id="a1" min="1" max="100" maxlength="3" value="1">			
 			<input type="button" id="Send" value="Προσθήκη" onclick="add1();moneyG();">
 			</div>
+			<br><br>
 		</div>
 		<div class="column">
 		<!-- ΔΕΥΤΕΡΗ ΕΙΚΟΝΑ --->
@@ -34,8 +36,10 @@
 			<input type="number" name="quantity" id="a2" min="1" max="100" maxlength="3" value="1">			
 			<input type="button" id="Send" value="Προσθήκη" onclick="add2();moneyG();">
 			</div>
+			<br><br>
 		</div>
-		<div class="column" style=" text-align: center; margin-top: 10%; ">
+		<div class="column" style=" text-align: center; margin-top: 4%; margin-left:2%" >
+		<input class="no-click" type="button" value="Καλάθι Αγορών"><br><br>
 		<label for="red"><b>Μπλουζάκι "ΚΟΚΚΙΝΟ" </b></label> 
 		<input readonly type="text" name="quantity" id="red" value="Readonly Value">	
 		<label for="white"><b>Μπλουζάκι "ΛΕΥΚΟ": </b></label> 
@@ -45,9 +49,11 @@
 		<label for="money"><b>Ποσό αγοράς: </b></label> 
 		<input readonly type="text" name="money" id="money"  value="Readonly Value">					
 		<input type="button" id="Send" value="Τελική Αγορά" onclick="transport();location.href='shoppingCart.php';" >
-		<input type="button" value="Καθαρισμός" onclick="reset();">
+		<input type="button" value="Καθαρισμός" onclick="reset();"> <br><br>
 		</div>
+		<br><br>
 	</div>
+</div>
 <!-- FOOTER-------------------->
 	<div class="footer">
 		 <div class="footerTag"> ΕΡΓΑΣΙΑ_ΠΑΠΕΙ_Π19057 @2019 </div>	

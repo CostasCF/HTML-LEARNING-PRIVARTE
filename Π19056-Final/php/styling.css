@@ -10,11 +10,12 @@
     background-color: #dc0d15;
     left: 0;
     right: 0;
-    border-bottom: 2px solid #ad0006;
+	border-top: 1px solid #ad0006;
+    border-bottom: 1px solid #ad0006;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-
+	border-radius: 5px;
 }
 
 li {
@@ -54,7 +55,7 @@ img.logoImg{
 
 /*---KENTRIKH EIKONA SPANOULIS---*/
 #BodySpan {
-  background-image: url("images/spanoulis_big5.png");
+  background-image: url("images/spanoulis_big10.png");
   background-repeat: no-repeat;
   background-attachment: fixed;  
   background-size: 100% 100%;
@@ -154,9 +155,11 @@ img.logoImg{
 }
 
 .row {
+  background-color: rgba(242, 242, 242,0.35);
   display: flex;
   flex-wrap: wrap;
   padding: 0 4px;
+  overflow:hidden;
 }
 
 /* Create four equal columns that sits next to each other */
@@ -172,7 +175,13 @@ img.logoImg{
   width: 100%;
   
 }
-	
+.Store{margin-top:2%; margin-bottom:2%; margin-right: 5%; margin-left:5%; }
+
+.no-click {pointer-events: none;  border-radius: 40px; width:250px; font-size:25px;}
+
+.EpitixisKataxorisi {
+	text-align:center;color:black;font-size:40px;
+}	
 /*---------- ΦΟΡΜΑ ΕΠΙΚΟΙΝΩΝΙΑΣ ---------------------------- */
 #bodyContact {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("images/spanoulis_big1.jpg");
@@ -188,7 +197,7 @@ input[type=text], textarea , input[type=email], input[type=password], input[type
   width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 30px;
   box-sizing: border-box;
   margin-top: 6px;
   margin-bottom: 16px;
@@ -201,7 +210,7 @@ input[type=submit] ,input[type=reset] ,input[type=button] {
   color: white;
   padding: 12px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius:30px;
   cursor: pointer;
 }
 
@@ -274,7 +283,7 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 /*----------------- footer --------------*/
 
 .footer {
-	height: 30px;
+	height: 20px;
 	position: fixed;
 	right: 0;
 	left: 0;
@@ -288,5 +297,5 @@ input[type=submit]:hover, input[type=reset]:hover ,input[type=button]:hover {
 	margin-right:10px;
 	margin-bottom:6px;
 }
-.footerTag {font-size: small;}
+.footerTag {font-size: small; color:#d7d8de;}
 hr {background-color:#c9c9c9; height:2px; border:0; width: 97.5% }

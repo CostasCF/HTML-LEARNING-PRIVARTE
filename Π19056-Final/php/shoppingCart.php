@@ -26,13 +26,13 @@
 		<!-- ΠΛΑΙΣΙΑ ΦΟΡΜΑΣ ---->
 				<label for="username">*Ονοματεπώνυμο:</label>
 				<input type="text" id="username" name="username" oncopy="return false" onpaste="return false"  
-				  onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"  maxlength="60" required placeholder="Ονοματεπώνυμο..">
+				  onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123) || (event.charCode==32)"  maxlength="60" required placeholder="Ονοματεπώνυμο..">
 				
 				<label for="password">*Κωδικός:</label> 
 				<input type="password" id="password" name="password" maxlength="100" required placeholder="Κωδικός..">
 
 				<label for="Telephone">*Τηλέφωνο:</label>
-				<input type="text" id="phone" name="phone" maxlength="10"  oncopy="return false" onpaste="return false" 
+				<input type="text" id="phone" name="phone" pattern="[0-9]{10}" oncopy="return false" onpaste="return false" maxlength="10" 
 				onkeypress="return !(event.charCode > 31 &&  (event.charCode < 48 || event.charCode > 57))" required placeholder="Τηλέφωνο.."> 
 				
 				<label for="Address">*Διεύθυνση:</label>
@@ -67,7 +67,6 @@
 		<input type="button" value ="Ακύρωση" onclick="location.href='store.php';"> 
 	</div>
 </form>
-<hr>
 
 <!-- FOOTER ------>
 	<div class="footer">

@@ -130,15 +130,12 @@ function validateForm() {
 	var email = document.getElementById("email").value;
 	var request = document.getElementById("request").value;
 	if (name=="" || email=="" || phone== "" || request=="") {
-		alert ("Όλα τα πεδία με * είναι υποχρεωτικά")
+		alert ("Όλα τα πεδία με * είναι υποχρεωτικά");
 
 	}
 	else {
 		popup()
 	}
-}
-function sendEmail(name,phone,email,request) {
-	window.location.href = "mailto:" + email + "?subject=&body=Ονοματεπώνυμο: " + name + "%0D%0AΤηλέφωνο:" + phone + "%0D%0A%0D%0A" + request;
 }
 function popup() {
 	var popup = document.getElementById("popup");
